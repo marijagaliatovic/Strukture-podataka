@@ -299,8 +299,30 @@ int add_to_file(char* file, position head)
 }
 int sortedInput(position p, position newPerson)
 {
-	while (p->next != NULL && strcmp(p->next->surname, newPerson->surname) < 0)
+	//sortiranje po prezimenu
+	while (p->next != NULL && strcmp(p->next->surname, newPerson->surname) <= 0)
+	{
+		//sortiranje po imenu
+		if (strcmp(p->next->surname, newPerson->surname) == 0)
+		{
+			while (p->next != NULL && strcmp(p->next->surname, newPerson->surname) == 0
+				&& strcmp(p->next->name, newPerson->name) <= 0)
+			{
+				if (strcmp(p->next->name, newPerson->name) == 0)
+				{
+					//po godini
+					while (p->next != NULL && strcmp(p->next->name, newPerson->name) == 0 && (p->next->birthYear) <= (newPerson->birthYear))
+					{
+						p = p->next;
+					}
+					break;
+				}
+				p = p->next;
+			}
+			break;
+		}
 		p = p->next;
+	}
 
 	insertAfter(p, newPerson);
 
