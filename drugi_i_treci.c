@@ -299,8 +299,20 @@ int add_to_file(char* file, position head)
 }
 int sortedInput(position p, position newPerson)
 {
-	while (p->next != NULL && strcmp(p->next->surname, newPerson->surname) < 0)
+	while (p->next != NULL && strcmp(p->next->surname, newPerson->surname) <= 0)
+	{
+		//sortiranje po prezimenu i imenu
+		if (strcmp(p->next->surname, newPerson->surname) == 0 && strcmp(p->next->name, newPerson->name) <= 0)
+		{
+			p = p->next;
+			break;
+		}
+		else if (strcmp(p->next->surname, newPerson->surname)==0 && strcmp(p->next->name, newPerson->name) > 0)
+		{
+			break;
+		}
 		p = p->next;
+	}
 
 	insertAfter(p, newPerson);
 
@@ -334,8 +346,7 @@ int read_from_file(char* file, position head)
 		fgets(buffer, MAX_LINE, pfile);
 		if (sscanf(buffer, " %s %s %d", newPerson->name, newPerson->surname, &newPerson->birthYear) == 3)
 		{
-			insertAfter(temp, newPerson);
-			temp = temp->next;
+			sortedInput(temp, newPerson);
 		}
 
 	}
