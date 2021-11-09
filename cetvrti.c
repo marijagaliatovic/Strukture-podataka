@@ -1,4 +1,4 @@
-﻿#include<stdio.h>
+#include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 #pragma warning(disable:4996)
@@ -25,6 +25,7 @@ int printList(position first);
 int merge(position nakon, position new);
 int DeleteAfter(position element);
 int freeMemory(position head);
+int printPoly(position first);
 
 
 int main()
@@ -42,11 +43,17 @@ int main()
 	add(&head1,&head2,&headSum);
 	multiply(&head1, &head2, &headMultiply);
 
-	printf("\nKonacna suma:\n");
+	/*printf("\nKonacna suma:\n");
 	printList(headSum.next);
 	
 	printf("\nKonacan umnozak:\n");
-	printList(headMultiply.next);
+	printList(headMultiply.next);*/
+
+	printf("\nKonacna suma:\n");
+	printPoly(headSum.next);
+
+	printf("\nKonacan umnozak:\n");
+	printPoly(headMultiply.next);
 
 	freeMemory(&head1);
 	freeMemory(&head2);
@@ -136,7 +143,7 @@ position createNew(int expo, int koef, position head)
 int sortedInput(position head, position new)
 {
 	position temp = head;
-	while (temp->next != NULL && (temp->next->expo) < (new->expo))
+	while (temp->next != NULL && (temp->next->expo) > (new->expo))
 	{
 		temp = temp->next;
 	}
@@ -237,22 +244,22 @@ int multiply(position head1,position head2,position headMultiply)
 	return 0;
 }
 
-int merge(position nakon,position new)
+int merge(position after,position new)
 {
-	if(nakon->next==NULL || nakon->next->expo!= new->expo)
+	if(after->next==NULL || after->next->expo!= new->expo)
 	{
-		insertAfter(nakon, new);
+		insertAfter(after, new);
 	}
 	else
 	{
-		int koef = nakon->next->koef + new->koef;
+		int koef = after->next->koef + new->koef;
 		if (koef == 0)
 		{
-			DeleteAfter(nakon);
+			DeleteAfter(after);
 		}
 		else
 		{
-			nakon->next->koef = koef;
+			after->next->koef = koef;
 		}
 		free(new);
 	}
@@ -275,6 +282,26 @@ int freeMemory(position head)
 		temp = head->next;
 		head->next = temp->next;
 		free(temp);
+	}
+	return 0;
+}
+
+int printPoly(position first)
+{
+	position temp = first;
+	printf("f(x) = ");
+	while (temp!=NULL)
+	{
+		if (temp->next== NULL)
+		{
+			printf("%dx^(%d)", temp->koef, temp->expo);
+		}
+		else
+		{
+			printf("%dx^(%d)", temp->koef, temp->expo);
+			printf("+");
+		}
+		temp = temp->next;
 	}
 	return 0;
 }
