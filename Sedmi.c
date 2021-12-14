@@ -30,7 +30,7 @@ StogPosition FindLast(StogPosition head);
 StogPosition FindBefore(StogPosition head);
 position ChangeDirectory(StogPosition head, position current, char* name);
 int DisplayInformation(position current);
-//int Exit(position current);
+int Exit(position current);
 int PrintCurrentDirectories(StogPosition head);
 int Menu(position current, StogPosition head);
 
@@ -259,7 +259,7 @@ int Menu(position current, StogPosition head)
 		}
 		else if (!strcmp(command, "exit"))
 		{
-			//Exit(current);
+			Exit(current);
 			break;
 		}
 		else
