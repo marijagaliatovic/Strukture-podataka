@@ -199,7 +199,6 @@ int Exit(position current)
 
 	Exit(current->sibling);
 	Exit(current->child);
-	Exit(current->sibling);
 
 	free(current);
 
