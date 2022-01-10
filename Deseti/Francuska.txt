@@ -1,0 +1,5 @@
+Paris 2161000
+Marseille 1614000
+Lyon 513275
+Bordeaux 249712
+Nice 342522

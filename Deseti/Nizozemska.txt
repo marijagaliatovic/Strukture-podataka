@@ -1,0 +1,3 @@
+Rotterdam 580000
+Amsterdam 870000
+Utrecht 360000

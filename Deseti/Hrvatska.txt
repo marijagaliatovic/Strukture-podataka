@@ -1,0 +1,7 @@
+Osijek 108048
+Sibenik 34302
+Zagreb 806341 
+Split 178102
+Zadar 75082
+Rijeka 128624
+Dubrovnik 42615 
