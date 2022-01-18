@@ -1,0 +1,10 @@
+Sevilla 688711
+Madrid 3223000
+Barcelona 1620000
+Bilbao 345821
+Valencia 791413
+Granada 232208
+Malaga 569005
+Cadiz 116979
+Cordoba 325708 
+Elche 230625
