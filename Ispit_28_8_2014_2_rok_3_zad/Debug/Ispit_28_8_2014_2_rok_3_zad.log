@@ -1,5 +1,0 @@
-﻿  Ispit_28_8_2014_2_rok_3_zad.c
-C:\Users\MarijaGaliatović\Documents\faks\3.semestar\strukture podataka\Ispit_28_8_2014_2_rok_3_zad\Ispit_28_8_2014_2_rok_3_zad.c(99,8): warning C4013: 'strcpy' undefined; assuming extern returning int
-C:\Users\MarijaGaliatović\Documents\faks\3.semestar\strukture podataka\Ispit_28_8_2014_2_rok_3_zad\Ispit_28_8_2014_2_rok_3_zad.c(117,37): warning C4013: 'strcmp' undefined; assuming extern returning int
-C:\Users\MarijaGaliatović\Documents\faks\3.semestar\strukture podataka\Ispit_28_8_2014_2_rok_3_zad\Ispit_28_8_2014_2_rok_3_zad.c(169): warning C4716: 'finalList': must return a value
-  Ispit_28_8_2014_2_rok_3_zad.vcxproj -> C:\Users\MarijaGaliatović\Documents\faks\3.semestar\strukture podataka\Ispit_28_8_2014_2_rok_3_zad\Debug\Ispit_28_8_2014_2_rok_3_zad.exe
